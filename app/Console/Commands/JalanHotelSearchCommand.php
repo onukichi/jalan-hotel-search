@@ -60,9 +60,9 @@ class JalanHotelSearchCommand extends Command
             'base_uri' => 'http://jws.jalan.net',
         ]);
 
-        $apiKey = env('JALAN_API_KEY', 'cyg16ee43ffa7b');
+        $apiKey = env('JALAN_API_KEY');
 
-        $prefectures = Prefecture::select('id', 'name', 'code', 'region_id')->where('id', 26)->get();
+        $prefectures = Prefecture::select('id', 'name', 'code', 'region_id')->get();
 
         $hasPrefectureSkipped = false;
         foreach ($prefectures as $prefecture) {
